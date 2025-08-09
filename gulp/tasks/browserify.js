@@ -46,10 +46,10 @@ function browserifyTask(watch) {
     }
 
     //iterate through every transform in config and load them
-    for(var transform in config.browserify.transforms) {
+    for (var transform in config.browserify.transforms) {
         if (config.browserify.transforms.hasOwnProperty(transform)) {
             var options = config.browserify.transforms[transform];
-            b.transform(options, require(transform));
+            b.transform(require(transform), options);
         }
     }
 
